@@ -4,10 +4,10 @@ import io.gd.generator.annotation.Default;
 import io.gd.generator.annotation.Field;
 import io.gd.generator.annotation.query.Query;
 import io.gd.generator.api.query.Predicate;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 

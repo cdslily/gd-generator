@@ -3,8 +3,6 @@ package io.gd.generator.test;
 import io.gd.generator.Config;
 import io.gd.generator.Generator;
 import io.gd.generator.handler.AllMappingMysqlHandler;
-import io.gd.generator.handler.MybatisXmlHandler;
-import io.gd.generator.handler.MysqlHandler;
 
 public class Main {
 	public static void main(String[] S) throws Exception {
