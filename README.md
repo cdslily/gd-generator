@@ -25,6 +25,9 @@ v2.0.15
 v2.0.16
 * 添加对jpa，生成QueryModel, Repository 支持联合主键支持
 
+v2.0.17
+* 增加了gradle 配置，支持发布到gradle 本地仓库
+
        
 ### maven 依赖
 ```xml
