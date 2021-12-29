@@ -106,23 +106,24 @@ public class NodeHandler extends AbstractHandler {
     }};
 
 
-    public boolean isWrapClass(Class clz) {
+    public boolean isWrapClass(Class<?> clz) {
         try {
-            return ((Class) clz.getField("TYPE").get(null)).isPrimitive();
+            return ((Class<?>) clz.getField("TYPE").get(null)).isPrimitive();
         } catch (Exception e) {
             return false;
         }
     }
 
+    @SuppressWarnings("unchecked")
     String getTypeName(Class<?> type, Set<Class<?>> sets) {
         if (type.isPrimitive() || Date.class.isAssignableFrom(type) || (this.isWrapClass(type)))
             return type.getSimpleName();
         else if (String.class.isAssignableFrom(type))
             return "''";
         else if (Enum.class.isAssignableFrom(type)) {
-            Enum[] enumConstants = ((Class<? extends Enum>) type).getEnumConstants();
+            Enum<?>[] enumConstants = ((Class<? extends Enum<?>>) type).getEnumConstants();
             String s = "";
-            for (Enum enumConstant : enumConstants) {
+            for (Enum<?> enumConstant : enumConstants) {
                 s += enumConstant.name() + "=" + enumConstant.ordinal() + ",";
             }
             return "enum{" + s.substring(0, s.length() - 1) + "}";

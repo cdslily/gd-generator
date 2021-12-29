@@ -373,7 +373,7 @@ public class MybatisXmlHandler extends ScopedHandler<MybatisXmlMeta> {
     private String resolveTypeHandler(Field field){
         TypeHandler typeHandler = field.getDeclaredAnnotation(TypeHandler.class);
         if (typeHandler != null) {
-            Class typeHandlerClass = typeHandler.value();
+            Class<?> typeHandlerClass = typeHandler.value();
             if(org.apache.ibatis.type.TypeHandler.class.isAssignableFrom(typeHandlerClass)){
                 return typeHandlerClass.getTypeName();
             }else
